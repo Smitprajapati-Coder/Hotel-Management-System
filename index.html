@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Royale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Solid Navbar -->
+  <nav class="navbar">
+    <div class="logo">🏨 Hotel Royale</div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="goToDashboard()">Home</a></li>
+      <li><a href="#" onclick="goToMenu()">Menu</a></li>
+      <li><a href="#" onclick="showCart()">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Start Page -->
+  <div id="startPage" class="page hero">
+    <div class="overlay-box">
+      <h1>🍽️ Welcome to <span class="highlight">Hotel Royale</span></h1>
+      <p>Luxury Dining • Authentic Taste • Premium Experience</p>
+      <button class="btn start-btn" onclick="goToDashboard()">🚀 Explore Menu</button>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboardPage" class="page hidden">
+    <div class="overlay-box">
+      <h1>🏠 Dashboard</h1>
+      <p>Select what you want to do:</p>
+      <button class="btn" onclick="goToMenu()">📋 View Menu</button>
+      <button class="btn" onclick="showCart()">🛒 View Cart</button>
+    </div>
+  </div>
+
+  <!-- Menu Page -->
+  <div id="menuPage" class="page hidden">
+    <header class="menu-header">
+      <h1>🍴 Our Signature Dishes</h1>
+      <p>Handpicked specialties crafted by top chefs</p>
+      <nav class="menu-nav">
+        <button onclick="showMenu('dessert')">Dessert</button>
+        <button onclick="showMenu('fastfood')">Fast Food</button>
+        <button onclick="showMenu('punjabi')">Punjabi</button>
+        <button onclick="showMenu('gujarati')">Gujarati</button>
+        <button onclick="showMenu('kathiyawadi')">Kathiyawadi</button>
+        <button onclick="showMenu('chinese')">Chinese</button>
+      </nav>
+    </header>
+
+    <div class="menu-container">
+      <!-- Menu Items -->
+      <section id="menu" class="menu"></section>
+
+      <!-- Cart -->
+      <aside class="cart">
+        <h2>🛒 Your Cart</h2>
+        <div id="cartItems"></div>
+        <p class="total">Total: ₹<span id="cartTotal">0</span></p>
+        <button class="btn" onclick="placeOrder()">✅ Place Order</button>
+        <button class="btn clear-btn" onclick="clearCart()">🗑 Clear Cart</button>
+        <button class="btn back-btn" onclick="backToDashboard()">⬅ Back</button>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Order Popup -->
+  <div id="orderPopup" class="popup">
+    <div class="popup-content">
+      <h2>🧾 Order Receipt</h2>
+      <p id="successMsg" class="success-msg">🎉 Your order has been placed successfully!</p>
+      <div id="receipt"></div>
+      <p class="total">💰 Grand Total: ₹<span id="finalTotal">0</span></p>
+      <button class="btn" onclick="closePopup()">❌ Close</button>
+      <button class="btn back-btn" onclick="backToMenu()">⬅ Back to Menu</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hotel Royale | Experience the Art of Dining</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
